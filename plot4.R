@@ -1,7 +1,7 @@
 ## Set the directory where the repository Electric Power Consumption is. 
 ## For the purpose of the assignment submission, I remove the directory that I used, 
 ## if you want to run this code in your own computer, please set your directory first and then run the code. 
-directory <- "" ##Replace here (inside the "") the name of your own directory
+directory <- "/" ##Replace here (inside the "") the name of your own directory
 setwd(directory)
 filename <- "household_power_consumption.txt"
 ## Extract names of the data set. When I use skip for some reason although I use header=TRUE, they are not retreived. I used this work-around to make it work. 
@@ -29,8 +29,8 @@ plot(DataMatrix$datetime,DataMatrix$Voltage, type="l", xlab="datetime", ylab="Vo
 plot(DataMatrix$datetime, DataMatrix$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering", col = "black")
 points(DataMatrix$datetime, DataMatrix$Sub_metering_2, type ="l", col = "red")
 points(DataMatrix$datetime, DataMatrix$Sub_metering_3, type = "l", col = "blue")
-legend("topright", bty="n", lty=c(1,1,1), col = c("black","red", "blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
+legend("topright", bty="n", lty=c(1,1,1), col = c("black","red", "blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), text.font=2)
 plot(DataMatrix$datetime,DataMatrix$Global_reactive_power, type="l", xlab="datetime", ylab="Global Reactive Power")
 #Copy graph to png file. 
-dev.copy(png,file ="plot4.png")
+dev.copy(png,file ="plot4.png", width = 480, height = 480, units = "px")
 dev.off

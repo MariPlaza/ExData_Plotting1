@@ -1,7 +1,7 @@
 ## Set the directory where the repository Electric Power Consumption is. 
 ## For the purpose of the assignment submission, I remove the directory that I used, 
 ## if you want to run this code in your own computer, please set your directory first and then run the code. 
-directory <- "" ##Replace here (inside the "") the name of your own directory
+directory <- "/" ##Replace here (inside the "") the name of your own directory
 setwd(directory)
 filename <- "household_power_consumption.txt"
 ## Extract names of the data set. When I use skip for some reason although I use header=TRUE, they are not retreived. I used this work-around to make it work. 
@@ -19,5 +19,5 @@ hist(DataMatrix$Global_active_power, breaks=12, main = "Global Active Power", xl
 axis(side=1, at= seq(0,6, by = 2))
 axis(side=2, at=seq(0, 1200, by=200))
 #Copy graph to png file. 
-dev.copy(png,file ="plot1.png")
+dev.copy(png,file ="plot1.png", width = 480, height = 480, units = "px") 
 dev.off
